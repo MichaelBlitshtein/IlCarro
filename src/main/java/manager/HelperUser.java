@@ -1,7 +1,11 @@
 package manager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HelperUser extends HelperBase{
 
@@ -9,20 +13,36 @@ public class HelperUser extends HelperBase{
         super(wd);
     }
 
-    public void openLoginRegistrationForm(){
-        click(By.cssSelector(""));
+    public void openLoginForm(){
+        click(By.cssSelector("[href='/login?url=%2Fsearch']"));
     }
 
-    public void fillLoginRegistrationForm(String email,String password){
+    public void fillLoginForm(String email,String password){
         //for email
-        type(By.cssSelector(""),email);
+        type(By.cssSelector("#email"),email);
         //for password
-        type(By.cssSelector(""),password);
+        type(By.cssSelector("#password"),password);
 
     }
 
     public void submitLogin(){
-        click(By.cssSelector(""));
+        click(By.cssSelector("[type='submit']"));
 
+    }
+
+    public boolean isLogged() {
+       List <WebElement> list = wd.findElements(By.xpath("//*[href='/logout?url=%2Fsearch']"));
+       return list.size()>0;
+    }
+
+    public void logout() {
+        click(By.xpath("//*[href='/logout?url=%2Fsearch']"));
+    }
+
+    public boolean isErrorMessageDisplayed(String message){
+      String text =  wd.findElement(By.xpath("//*[text()='\"Login or Password incorrect\"']")).getText();
+        //click 'ok'
+        click(By.xpath("//*[text()='Ok']"));
+        return text.contains(message);
     }
 }
