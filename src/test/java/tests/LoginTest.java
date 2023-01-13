@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,6 +20,7 @@ public class LoginTest extends TestBase{
        app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345$");
        app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isLogged());
+        app.getHelperUser().closeDialogContainer();
     }
 
     @Test

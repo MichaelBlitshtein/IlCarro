@@ -31,12 +31,12 @@ public class HelperUser extends HelperBase{
     }
 
     public boolean isLogged() {
-       List <WebElement> list = wd.findElements(By.xpath("//*[href='/logout?url=%2Fsearch']"));
+       List <WebElement> list = wd.findElements(By.xpath("//*[@href='/logout?url=%2Fsearch']"));
        return list.size()>0;
     }
 
     public void logout() {
-        click(By.xpath("//*[href='/logout?url=%2Fsearch']"));
+        click(By.xpath("//*[@href='/logout?url=%2Fsearch']"));
     }
 
     public boolean isErrorMessageDisplayed(String message){
@@ -44,5 +44,9 @@ public class HelperUser extends HelperBase{
         //click 'ok'
         click(By.xpath("//*[text()='Ok']"));
         return text.contains(message);
+    }
+
+    public void closeDialogContainer(){
+        click(By.xpath("//button[text()='Ok']"));
     }
 }
