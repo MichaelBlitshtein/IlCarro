@@ -1,7 +1,9 @@
 package tests;
 
+import model.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,29 +22,55 @@ public class LoginTest extends TestBase{
        app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345$");
        app.getHelperUser().submitLogin();
         Assert.assertTrue(app.getHelperUser().isLogged());
-        app.getHelperUser().closeDialogContainer();
+    }
+
+    @Test
+    public void loginSuccessModel(){
+        User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345$");
+
+        app.getHelperUser().openLoginForm();
+        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().submitLogin();
+        Assert.assertTrue(app.getHelperUser().isLogged());
     }
 
     @Test
     public void loginWrongEmail(){
+        User user = new User().withEmail("michaelgmail.com").withPassword("Michael12345$");
+
         app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm("michael@gmailcom","Michael12345$");
+        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().submitLogin();
+        Assert.assertEquals(app.getHelperUser().getErrorText(),"It'snot look like email");
+        Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+    }
+
+    @Test
+    public void loginWrongEmail_2() {
+        app.getHelperUser().openLoginForm();
+        app.getHelperUser().fillLoginForm("michael@gmailcom", "Michael12345$");
         app.getHelperUser().submitLogin();
         Assert.assertFalse(app.getHelperUser().isLogged());
         Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
     }
-
     @Test
     public void loginWrongPassword(){
+        User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345");
+
         app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345");
+        app.getHelperUser().fillLoginForm(user);
         app.getHelperUser().submitLogin();
         Assert.assertFalse(app.getHelperUser().isLogged());
         Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
     }
 
-    @Test
+    @Test(enabled = false)
     public void loginUnregisteredUser(){
 
+    }
+
+    @AfterMethod
+    public void postCondition(){
+        app.getHelperUser().closeDialogContainer();
     }
 }

@@ -1,5 +1,6 @@
 package manager;
 
+import model.User;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,11 @@ public class HelperUser extends HelperBase{
 
     }
 
+    public void fillLoginForm(User user){
+        type(By.cssSelector("#email"), user.getEmail());
+        type(By.cssSelector("#password"), user.getPassword());
+    }
+
     public void submitLogin(){
         click(By.cssSelector("[type='submit']"));
 
@@ -47,6 +53,17 @@ public class HelperUser extends HelperBase{
     }
 
     public void closeDialogContainer(){
-        click(By.xpath("//button[text()='Ok']"));
+       if(isElementPresent(By.xpath("//button[text()='Ok']"))){
+           click(By.xpath("//button[text()='Ok']"));
+       }
+    }
+
+    public String getErrorText() {
+        return wd.findElement(By.cssSelector("div.error")).getText();
+    }
+
+    public boolean isYallaButtonNotActive() {
+       // return isElementPresent(By.cssSelector("button[disabled]"));
+        return wd.findElement(By.cssSelector("button[disabled]")).isEnabled();
     }
 }
