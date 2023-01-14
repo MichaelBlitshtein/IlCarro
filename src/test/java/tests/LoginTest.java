@@ -1,7 +1,6 @@
 package tests;
 
 import model.User;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,7 +19,7 @@ public class LoginTest extends TestBase{
     public void loginSuccess(){
        app.getHelperUser().openLoginForm();
        app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345$");
-       app.getHelperUser().submitLogin();
+       app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isLogged());
     }
 
@@ -30,7 +29,7 @@ public class LoginTest extends TestBase{
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertTrue(app.getHelperUser().isLogged());
     }
 
@@ -40,7 +39,7 @@ public class LoginTest extends TestBase{
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getErrorText(),"It'snot look like email");
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
     }
@@ -49,7 +48,7 @@ public class LoginTest extends TestBase{
     public void loginWrongEmail_2() {
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("michael@gmailcom", "Michael12345$");
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertFalse(app.getHelperUser().isLogged());
         Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
     }
@@ -59,7 +58,7 @@ public class LoginTest extends TestBase{
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertFalse(app.getHelperUser().isLogged());
         Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
     }
