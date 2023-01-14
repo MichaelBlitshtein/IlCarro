@@ -27,8 +27,8 @@ public class HelperUser extends HelperBase{
     }
 
     public void fillLoginForm(User user){
-        type(By.cssSelector("#email"), user.getEmail());
-        type(By.cssSelector("#password"), user.getPassword());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
     }
 
     public void submit(){
@@ -64,7 +64,7 @@ public class HelperUser extends HelperBase{
 
     public boolean isYallaButtonNotActive() {
        // return isElementPresent(By.cssSelector("button[disabled]"));
-        return wd.findElement(By.cssSelector("button[disabled]")).isEnabled();
+        return !wd.findElement(By.cssSelector("button[disabled]")).isEnabled();
     }
 
     public void openRegistrationForm() {
@@ -72,10 +72,10 @@ public class HelperUser extends HelperBase{
     }
 
     public void fillRegistrationForm(User user) {
-        type(By.cssSelector("#name"),user.getName());
-        type(By.cssSelector("#lastName"), user.getLastName());
-        type(By.cssSelector("#email"), user.getEmail());
-        type(By.cssSelector("#password"), user.getPassword());
+        type(By.id("#name"),user.getName());
+        type(By.id("#lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"),user.getPassword());
 
     }
 
