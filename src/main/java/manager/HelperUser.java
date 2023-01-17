@@ -1,9 +1,8 @@
 package manager;
 
 import model.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -82,6 +81,29 @@ public class HelperUser extends HelperBase{
     public void checkPolicy() {
         click(By.cssSelector("label[for='terms-of-use']"));
     }
+
+    public void checkPolicyXY(){
+        Dimension size = wd.manage().window().getSize();
+        System.out.println("Window height" + size.getHeight());
+        System.out.println("Window height" + size.getWidth());
+
+        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+
+        Rectangle rect = label.getRect();
+        int xOffset = rect.getWidth()/2;
+
+        Actions actions = new Actions(wd);
+        actions.moveToElement(label,-xOffset,0).click().release().perform();
+    }
+
+    public void checkPolicyJS(){
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("");
+        document.querySelector('#terms-of-use').checked=true;
+
+    }
+
+
 
     public boolean isRegistrationSuccess(){
        List <WebElement> list = wd.findElements(By.cssSelector("//*[@class='message'][text()='You are logged in success']"));

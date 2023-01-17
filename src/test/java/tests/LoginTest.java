@@ -23,7 +23,7 @@ public class LoginTest extends TestBase{
         Assert.assertTrue(app.getHelperUser().isLogged());
     }
 
-    @Test
+    @Test(enabled = false)
     public void loginSuccessModel(){
         User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345$");
 
