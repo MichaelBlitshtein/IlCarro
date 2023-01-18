@@ -20,17 +20,17 @@ public class LoginTest extends TestBase{
        app.getHelperUser().openLoginForm();
        app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345$");
        app.getHelperUser().submit();
-        Assert.assertTrue(app.getHelperUser().isLogged());
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
     }
 
-    @Test(enabled = false)
+    @Test
     public void loginSuccessModel(){
         User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345$");
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
         app.getHelperUser().submit();
-        Assert.assertTrue(app.getHelperUser().isLogged());
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
     }
 
     @Test
@@ -44,14 +44,7 @@ public class LoginTest extends TestBase{
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
     }
 
-    @Test
-    public void loginWrongEmail_2() {
-        app.getHelperUser().openLoginForm();
-        app.getHelperUser().fillLoginForm("michael@gmailcom", "Michael12345$");
-        app.getHelperUser().submit();
-        Assert.assertFalse(app.getHelperUser().isLogged());
-        Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
-    }
+
     @Test
     public void loginWrongPassword(){
         User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345");
@@ -59,8 +52,7 @@ public class LoginTest extends TestBase{
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
         app.getHelperUser().submit();
-        Assert.assertFalse(app.getHelperUser().isLogged());
-        Assert.assertTrue(app.getHelperUser().isErrorMessageDisplayed("\"Login or Password incorrect\""));
+        Assert.assertEquals(app.getHelperUser().getMessage(),"\"Login or Password incorrect\"");
     }
 
     @Test(enabled = false)
@@ -70,6 +62,7 @@ public class LoginTest extends TestBase{
 
     @AfterMethod
     public void postCondition(){
+
         app.getHelperUser().closeDialogContainer();
     }
 }

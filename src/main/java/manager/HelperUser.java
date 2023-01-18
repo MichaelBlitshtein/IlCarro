@@ -14,15 +14,12 @@ public class HelperUser extends HelperBase{
 
     public void openLoginForm(){
 
-        click(By.cssSelector("[href='/login?url=%2Fsearch']"));
+        click(By.xpath("//a[text()=' Log in ']"));
     }
 
     public void fillLoginForm(String email,String password){
-        //for email
-        type(By.cssSelector("#email"),email);
-        //for password
-        type(By.cssSelector("#password"),password);
-
+        type(By.id("email"),email);
+        type(By.id("password"),password);
     }
 
     public void fillLoginForm(User user){
@@ -30,31 +27,24 @@ public class HelperUser extends HelperBase{
         type(By.id("password"), user.getPassword());
     }
 
-    public void submit(){
-        click(By.cssSelector("[type='submit']"));
+    public String getMessage() {
+        return wd.findElement(By.cssSelector("div.dialog-container>h2")).getText();
+    }
 
+    public void closeDialogContainer() {
+        if(isElementPresent(By.xpath("//button[text()='Ok']"))) {
+            click(By.xpath("//button[text()='Ok']"));
+        }
     }
 
     public boolean isLogged() {
-       List <WebElement> list = wd.findElements(By.xpath("//*[@href='/logout?url=%2Fsearch']"));
-       return list.size()>0;
+        //return isElementPresent(By.xpath("//button[text()=' Logout ']"));
+        return isElementPresent(By.cssSelector("div.header a:nth-child(5)"));
     }
 
     public void logout() {
-        click(By.xpath("//*[@href='/logout?url=%2Fsearch']"));
-    }
-
-    public boolean isErrorMessageDisplayed(String message){
-      String text =  wd.findElement(By.xpath("//*[text()='\"Login or Password incorrect\"']")).getText();
-        //click 'ok'
-        click(By.xpath("//*[text()='Ok']"));
-        return text.contains(message);
-    }
-
-    public void closeDialogContainer(){
-       if(isElementPresent(By.xpath("//button[text()='Ok']"))){
-           click(By.xpath("//button[text()='Ok']"));
-       }
+        // click(By.xpath("//button[text()=' Logout ']"));
+        click(By.cssSelector("div.header a:nth-child(5)"));
     }
 
     public String getErrorText() {
@@ -62,51 +52,57 @@ public class HelperUser extends HelperBase{
     }
 
     public boolean isYallaButtonNotActive() {
-       // return isElementPresent(By.cssSelector("button[disabled]"));
+        // return isElementPresent(By.cssSelector("button[disabled]"));
         return !wd.findElement(By.cssSelector("button[disabled]")).isEnabled();
     }
 
     public void openRegistrationForm() {
-        click(By.cssSelector("[href^='/registration']"));
+        click(By.xpath("//a[text()=' Sign up ']"));
     }
 
     public void fillRegistrationForm(User user) {
-        type(By.id("#name"),user.getName());
-        type(By.id("#lastName"), user.getLastName());
-        type(By.id("email"), user.getEmail());
+        type(By.id("name"),user.getName());
+        type(By.id("lastName"),user.getLastName());
+        type(By.id("email"),user.getEmail());
         type(By.id("password"),user.getPassword());
-
     }
 
     public void checkPolicy() {
-        click(By.cssSelector("label[for='terms-of-use']"));
+        //click(By.id("terms-of-use"));
+        //click(By.cssSelector("label[for='terms-of-use']"));
+        if(!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            click(By.cssSelector(".checkbox-container"));
+        }
     }
-
     public void checkPolicyXY(){
-        Dimension size = wd.manage().window().getSize();
-        System.out.println("Window height" + size.getHeight());
-        System.out.println("Window height" + size.getWidth());
 
-        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+        Dimension size = wd.manage().window().getSize();
+        System.out.println("Window Height "+ size.getHeight());
+        System.out.println("Window Width "+ size.getWidth());
+
+        WebElement label =wd.findElement(By.cssSelector("label[for='terms-of-use']"));
 
         Rectangle rect = label.getRect();
         int xOffset = rect.getWidth()/2;
 
         Actions actions = new Actions(wd);
         actions.moveToElement(label,-xOffset,0).click().release().perform();
-    }
-
-    public void checkPolicyJS(){
-        JavascriptExecutor js = (JavascriptExecutor) wd;
-        js.executeScript("");
-        document.querySelector('#terms-of-use').checked=true;
 
     }
+    public void checkPolicyJS() {
+        JavascriptExecutor js  = (JavascriptExecutor) wd;
+        js.executeScript("document.querySelector('#terms-of-use').checked=true;");
 
+    }
 
+    public boolean isErrorMessageContains(String message) {
+        return wd.findElement(By.cssSelector(".error")).getText().contains(message);
+    }
 
-    public boolean isRegistrationSuccess(){
-       List <WebElement> list = wd.findElements(By.cssSelector("//*[@class='message'][text()='You are logged in success']"));
-       return list.size()>0;
+    public void login(User user) {
+        openLoginForm();
+        fillLoginForm(user);
+        submit();
+        closeDialogContainer();
     }
 }
