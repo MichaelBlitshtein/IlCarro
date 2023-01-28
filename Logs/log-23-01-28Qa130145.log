@@ -1,0 +1,4 @@
+13:01:46.853  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+13:01:47.825  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+13:01:47.850  INFO  tests.TestBase - The name of starts method is -->loginSuccessModel
+13:01:57.861  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'

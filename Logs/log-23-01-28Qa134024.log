@@ -1,0 +1,23 @@
+13:40:25.918  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+13:40:27.676  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+13:40:27.699  INFO  tests.TestBase - The name of starts method is -->loginSuccessModel
+13:40:27.702  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //a[text()=' Logout ']
+13:40:37.719  INFO  manager.ListenerWD - After find elements  -->By.xpath: //a[text()=' Logout ']
+13:40:37.722  INFO  manager.ListenerWD - List size --> 0
+13:40:37.723  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+13:40:37.724  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Log in ']
+13:40:37.747  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Log in ']
+13:40:37.821  INFO  manager.ListenerWD - Before find element  --> By.id: email
+13:40:37.854  INFO  manager.ListenerWD - After find element  --> By.id: email
+13:40:37.978  INFO  manager.ListenerWD - Before find element  --> By.id: password
+13:40:37.999  INFO  manager.ListenerWD - After find element  --> By.id: password
+13:40:38.097  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[@type='submit']
+13:40:38.119  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[@type='submit']
+13:40:40.173  INFO  manager.ListenerWD - Before find element  --> By.cssSelector: div.dialog-container>h2
+13:40:40.193  INFO  manager.ListenerWD - After find element  --> By.cssSelector: div.dialog-container>h2
+13:40:40.207  INFO  tests.TestBase - Test success
+13:40:40.208  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //button[text()='Ok']
+13:40:40.229  INFO  manager.ListenerWD - After find elements  -->By.xpath: //button[text()='Ok']
+13:40:40.229  INFO  manager.ListenerWD - List size --> 1
+13:40:40.229  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+13:40:40.253  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']

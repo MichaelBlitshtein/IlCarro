@@ -38,13 +38,15 @@ public class HelperUser extends HelperBase{
     }
 
     public boolean isLogged() {
-        //return isElementPresent(By.xpath("//button[text()=' Logout ']"));
-        return isElementPresent(By.cssSelector("div.header a:nth-child(5)"));
+        return isElementPresent(By.xpath("//a[text()=' Logout ']"));
+        ////a[text()=' Logout ']
+        // return isElementPresent(By.cssSelector("div.header a:nth-
+        //a[normalize-space()='Logout'][1]
     }
 
     public void logout() {
-        // click(By.xpath("//button[text()=' Logout ']"));
-        click(By.cssSelector("div.header a:nth-child(5)"));
+        click(By.xpath("//a[text()=' Logout ']"));
+       // click(By.cssSelector("div.header a:nth-child(5)"));
     }
 
     public String getErrorText() {

@@ -4,3 +4,36 @@
 17:24:29.202  INFO  tests.TestBase - I need logout
 17:24:29.203  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
 17:24:31.358  INFO  tests.TestBase - Test success
+12:30:32.474  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+12:30:33.569  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+12:30:33.600  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+12:30:33.702  INFO  tests.TestBase - I need logout
+12:30:33.704  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+12:30:43.146  INFO  tests.TestBase - Test success
+12:30:43.200  INFO  tests.TestBase - The name of starts method is -->loginSuccessModel
+12:30:43.263  INFO  tests.TestBase - I need logout
+12:30:43.264  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+12:30:53.421  INFO  tests.TestBase - The name of starts method is -->loginWrongEmail
+12:30:53.475  INFO  tests.TestBase - I need logout
+12:30:53.476  INFO  tests.TestBase - Login with wrong data (email): email 'michaelmail.com', password 'Michael12345$'
+12:30:53.796  INFO  tests.TestBase - Test success
+12:31:03.819  INFO  tests.TestBase - The name of starts method is -->loginWrongPassword
+12:31:03.862  INFO  tests.TestBase - I need logout
+12:31:03.862  INFO  tests.TestBase - Login with wrong data (password): email 'michael@mail.com', password 'Michael12345'
+12:37:26.937  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+12:37:28.251  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+12:37:28.273  INFO  tests.TestBase - The name of starts method is -->loginSuccessModel
+12:37:38.296  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+12:37:39.813  INFO  tests.TestBase - Test success
+12:39:15.234  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+12:39:16.230  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+12:39:16.252  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+12:39:26.300  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+12:39:27.759  INFO  tests.TestBase - The name of starts method is -->loginSuccessModel
+12:39:27.836  INFO  tests.TestBase - I need logout
+12:39:27.837  INFO  tests.TestBase - Login with valid data: email 'michael@gmail.com', password 'Michael12345$'
+12:39:38.004  INFO  tests.TestBase - The name of starts method is -->loginWrongEmail
+12:39:48.056  INFO  tests.TestBase - Login with wrong data (email): email 'michaelmail.com', password 'Michael12345$'
+12:39:48.366  INFO  tests.TestBase - Test success
+12:39:58.392  INFO  tests.TestBase - The name of starts method is -->loginWrongPassword
+12:40:08.456  INFO  tests.TestBase - Login with wrong data (password): email 'michael@mail.com', password 'Michael12345'
