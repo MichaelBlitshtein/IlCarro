@@ -1,13 +1,20 @@
 package tests;
 
+import manager.DataProviderUser;
 import manager.ListenerTNG;
 import model.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.*;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 @Listeners(ListenerTNG.class)
 
 public class LoginTest extends TestBase{
@@ -20,20 +27,70 @@ public class LoginTest extends TestBase{
         }
 
     }
-    @Test
-    public void loginSuccess(){
-        logger.info("Login with valid data: email 'michael@gmail.com', password 'Michael12345$'");
+
+
+    @DataProvider
+    public Iterator<Object[]> loginData(){
+        List<Object[]> list = new ArrayList<>();
+        list.add(new Object[]{"michael@gmail.com","Michael12345$"});
+        list.add(new Object[]{"franky@gmail.com","FrankY123$"});
+        list.add(new Object[]{"michael@gmail.com","Michael12345$"});
+
+        return list.iterator();
+    }
+
+
+    @Test(dataProvider = "loginData")
+    public void loginSuccess(String email,String password){
+        logger.info("Login with valid data: email:"+ email+" & password:"+password);
        app.getHelperUser().openLoginForm();
-       app.getHelperUser().fillLoginForm("michael@gmail.com","Michael12345$");
+       app.getHelperUser().fillLoginForm(email,password);
+       app.getHelperUser().pause(3000);
        app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
         app.getHelperUser().click(By.xpath("//button[text()='Ok']"));
         logger.info("Test success");
     }
 
+
+    @Test(dataProvider = "loginDataClass",dataProviderClass = DataProviderUser.class)
+    public void loginSuccess_2(String email,String password){
+        logger.info("Login with valid data: email:"+ email+" & password:"+password);
+        app.getHelperUser().openLoginForm();
+        app.getHelperUser().fillLoginForm(email,password);
+        app.getHelperUser().pause(3000);
+        app.getHelperUser().submit();
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+        app.getHelperUser().click(By.xpath("//button[text()='Ok']"));
+        logger.info("Test success");
+    }
+
+
+    @Test(dataProvider = "loginDataUser",dataProviderClass = DataProviderUser.class)
+    public void loginSuccessModel2(User user){
+
+        logger.info("Test starts with user model --->"+user.toString());
+        app.getHelperUser().openLoginForm();
+        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().submit();
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+    }
+
+
+    @Test(dataProvider = "loginDataUserFromFile",dataProviderClass = DataProviderUser.class)
+    public void loginSuccessModelFromFile(User user){
+
+        logger.info("Test starts with user model --->"+user.toString());
+        app.getHelperUser().openLoginForm();
+        app.getHelperUser().fillLoginForm(user);
+        app.getHelperUser().submit();
+        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+    }
+
+
     @Test
     public void loginSuccessModel(){
-        User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345$");
+    User user = new User().withEmail("michael@gmail.com").withPassword("Michael12345$");
         logger.info("Login with valid data: email 'michael@gmail.com', password 'Michael12345$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
@@ -77,4 +134,7 @@ public class LoginTest extends TestBase{
 
         app.getHelperUser().closeDialogContainer();
     }
+
+
+
 }

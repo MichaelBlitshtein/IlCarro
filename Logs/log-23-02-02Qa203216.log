@@ -1,0 +1,82 @@
+20:32:18.161  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+20:32:20.875  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+20:32:20.881  INFO  manager.ListenerTNG - onStart ---Gradle test
+20:32:20.900  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+20:32:20.903  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //a[text()=' Logout ']
+20:32:30.934  INFO  manager.ListenerWD - After find elements  -->By.xpath: //a[text()=' Logout ']
+20:32:30.936  INFO  manager.ListenerWD - List size --> 0
+20:32:30.938  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+20:32:30.943  INFO  tests.TestBase - Login with valid data: email:michael@gmail.com & password:Michael12345$
+20:32:30.944  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Log in ']
+20:32:30.969  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Log in ']
+20:32:31.040  INFO  manager.ListenerWD - Before find element  --> By.id: email
+20:32:31.068  INFO  manager.ListenerWD - After find element  --> By.id: email
+20:32:31.177  INFO  manager.ListenerWD - Before find element  --> By.id: password
+20:32:31.198  INFO  manager.ListenerWD - After find element  --> By.id: password
+20:32:31.291  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[@type='submit']
+20:32:31.315  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[@type='submit']
+20:32:31.357  INFO  manager.ListenerWD - Before find element  --> By.cssSelector: div.dialog-container>h2
+20:32:32.437  INFO  manager.ListenerWD - After find element  --> By.cssSelector: div.dialog-container>h2
+20:32:32.451  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+20:32:32.472  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']
+20:32:32.502  INFO  tests.TestBase - Test success
+20:32:32.504  INFO  manager.ListenerTNG - onTestSuccess ---loginSuccess
+20:32:32.504  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //button[text()='Ok']
+20:32:32.528  INFO  manager.ListenerWD - After find elements  -->By.xpath: //button[text()='Ok']
+20:32:32.529  INFO  manager.ListenerWD - List size --> 1
+20:32:32.529  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+20:32:32.551  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']
+20:32:32.580  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+20:32:32.581  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //a[text()=' Logout ']
+20:32:32.601  INFO  manager.ListenerWD - After find elements  -->By.xpath: //a[text()=' Logout ']
+20:32:32.601  INFO  manager.ListenerWD - List size --> 1
+20:32:32.601  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Logout ']
+20:32:32.629  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Logout ']
+20:32:32.704  INFO  tests.TestBase - I need logout
+20:32:32.705  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+20:32:32.705  INFO  tests.TestBase - Login with valid data: email:franky@gmail.com & password:FrankY123$
+20:32:32.706  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Log in ']
+20:32:32.724  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Log in ']
+20:32:32.769  INFO  manager.ListenerWD - Before find element  --> By.id: email
+20:32:32.789  INFO  manager.ListenerWD - After find element  --> By.id: email
+20:32:32.920  INFO  manager.ListenerWD - Before find element  --> By.id: password
+20:32:32.936  INFO  manager.ListenerWD - After find element  --> By.id: password
+20:32:33.039  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[@type='submit']
+20:32:33.056  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[@type='submit']
+20:32:33.101  INFO  manager.ListenerWD - Before find element  --> By.cssSelector: div.dialog-container>h2
+20:32:33.803  INFO  manager.ListenerWD - After find element  --> By.cssSelector: div.dialog-container>h2
+20:32:33.816  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+20:32:33.829  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']
+20:32:33.859  INFO  tests.TestBase - Test success
+20:32:33.859  INFO  manager.ListenerTNG - onTestSuccess ---loginSuccess
+20:32:33.860  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //button[text()='Ok']
+20:32:33.874  INFO  manager.ListenerWD - After find elements  -->By.xpath: //button[text()='Ok']
+20:32:33.874  INFO  manager.ListenerWD - List size --> 1
+20:32:33.874  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+20:32:33.889  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']
+20:32:33.910  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+20:32:33.911  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //a[text()=' Logout ']
+20:32:33.924  INFO  manager.ListenerWD - After find elements  -->By.xpath: //a[text()=' Logout ']
+20:32:33.925  INFO  manager.ListenerWD - List size --> 1
+20:32:33.925  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Logout ']
+20:32:33.940  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Logout ']
+20:32:34.003  INFO  tests.TestBase - I need logout
+20:32:34.004  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+20:32:34.004  INFO  tests.TestBase - Login with valid data: email:michael@gmail.com & password:Michael12345$
+20:32:34.005  INFO  manager.ListenerWD - Before find element  --> By.xpath: //a[text()=' Log in ']
+20:32:34.021  INFO  manager.ListenerWD - After find element  --> By.xpath: //a[text()=' Log in ']
+20:32:34.066  INFO  manager.ListenerWD - Before find element  --> By.id: email
+20:32:34.079  INFO  manager.ListenerWD - After find element  --> By.id: email
+20:32:34.182  INFO  manager.ListenerWD - Before find element  --> By.id: password
+20:32:34.195  INFO  manager.ListenerWD - After find element  --> By.id: password
+20:32:34.283  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[@type='submit']
+20:32:34.304  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[@type='submit']
+20:32:34.338  INFO  manager.ListenerWD - Before find element  --> By.cssSelector: div.dialog-container>h2
+20:32:34.735  INFO  manager.ListenerWD - After find element  --> By.cssSelector: div.dialog-container>h2
+20:32:34.747  INFO  manager.ListenerTNG - onTestFailure ---loginSuccess
+20:32:34.748  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //button[text()='Ok']
+20:32:34.762  INFO  manager.ListenerWD - After find elements  -->By.xpath: //button[text()='Ok']
+20:32:34.762  INFO  manager.ListenerWD - List size --> 1
+20:32:34.763  INFO  manager.ListenerWD - Before find element  --> By.xpath: //button[text()='Ok']
+20:32:34.775  INFO  manager.ListenerWD - After find element  --> By.xpath: //button[text()='Ok']
+20:32:34.808  INFO  manager.ListenerTNG - onFinishGradle test
