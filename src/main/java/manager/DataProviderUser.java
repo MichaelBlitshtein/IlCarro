@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 public class DataProviderUser {
     @DataProvider
@@ -27,9 +28,9 @@ public class DataProviderUser {
     public Iterator<Object[]> loginDataUser(){
         List<Object[]> list = new ArrayList<>();
 
-        list.add(new Object[]{User.builder().email("michael@gmail.com").password("Michael12345$").build()});
-        list.add(new Object[]{User.builder().email("franky@gmail.com").password("FrankY123$").build()});
-        list.add(new Object[]{User.builder().email("michael@gmail.com").password("Michael12345$").build()});
+        list.add(new Object[]{new User().withEmail("michael@gmail.com").withPassword("Michael12345$")});
+        list.add(new Object[]{new User().withEmail("franky@gmail.com").withPassword("FrankY123$")});
+        list.add(new Object[]{new User().withEmail("michael@gmail.com").withPassword("Michael12345$")});
 
         return list.iterator();
     }
@@ -42,7 +43,7 @@ public class DataProviderUser {
         String line = bufferedReader.readLine();
         while(line!=null){
             String[] split = line.split(";");
-            list.add(new Object[]{User.builder().email(split[0]).password(split[1]).build()});
+            list.add(new Object[]{new User().withEmail(split[0]).withPassword(split[1])});
             line = bufferedReader.readLine();
         }
 

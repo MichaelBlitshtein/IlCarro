@@ -1,0 +1,8 @@
+17:33:12.249  INFO  manager.ListenerTNG - onStart ---Gradle test
+17:33:12.275  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:33:12.276  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:33:12.277  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:33:12.278  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:33:12.279  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:33:12.279  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:33:12.282  INFO  manager.ListenerTNG - onFinishGradle test

@@ -1,0 +1,38 @@
+17:02:50.148  INFO  manager.ListenerTNG - onStart ---Nopackage
+17:02:50.176  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:02:50.177  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:02:50.179  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:02:50.179  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:02:50.180  INFO  manager.ListenerTNG - onTestStart---loginSuccess
+17:02:50.180  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess
+17:02:50.183  INFO  manager.ListenerTNG - onTestStart---loginSuccessModel
+17:02:50.183  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModel
+17:02:50.185  INFO  manager.ListenerTNG - onTestStart---loginSuccessModel2
+17:02:50.198  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModel2
+17:02:50.200  INFO  manager.ListenerTNG - onTestStart---loginSuccessModel2
+17:02:50.200  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModel2
+17:02:50.201  INFO  manager.ListenerTNG - onTestStart---loginSuccessModel2
+17:02:50.201  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModel2
+17:02:50.203  INFO  manager.ListenerTNG - onTestStart---loginSuccessModelFromFile
+17:02:50.203  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModelFromFile
+17:02:50.204  INFO  manager.ListenerTNG - onTestStart---loginSuccessModelFromFile
+17:02:50.205  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModelFromFile
+17:02:50.206  INFO  manager.ListenerTNG - onTestStart---loginSuccessModelFromFile
+17:02:50.207  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccessModelFromFile
+17:02:50.208  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:02:50.209  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:02:50.210  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:02:50.211  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:02:50.213  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:02:50.213  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:02:50.215  INFO  manager.ListenerTNG - onTestStart---loginWrongEmail
+17:02:50.215  INFO  manager.ListenerTNG - onTestSkipped ---loginWrongEmail
+17:02:50.216  INFO  manager.ListenerTNG - onTestStart---loginWrongPassword
+17:02:50.217  INFO  manager.ListenerTNG - onTestSkipped ---loginWrongPassword
+17:02:50.221  INFO  manager.ListenerTNG - onTestStart---registrationSuccess
+17:02:50.222  INFO  manager.ListenerTNG - onTestSkipped ---registrationSuccess
+17:02:50.223  INFO  manager.ListenerTNG - onTestStart---registrationWrongEmail
+17:02:50.223  INFO  manager.ListenerTNG - onTestSkipped ---registrationWrongEmail
+17:02:50.224  INFO  manager.ListenerTNG - onTestStart---registrationWrongPassword
+17:02:50.224  INFO  manager.ListenerTNG - onTestSkipped ---registrationWrongPassword
+17:02:50.225  INFO  manager.ListenerTNG - onFinishNopackage

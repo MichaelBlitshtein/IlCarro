@@ -1,0 +1,8 @@
+17:18:19.235  INFO  manager.ListenerTNG - onStart ---Nopackage
+17:18:19.261  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:18:19.262  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:18:19.263  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:18:19.264  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:18:19.265  INFO  manager.ListenerTNG - onTestStart---loginSuccess_2
+17:18:19.265  INFO  manager.ListenerTNG - onTestSkipped ---loginSuccess_2
+17:18:19.268  INFO  manager.ListenerTNG - onFinishNopackage

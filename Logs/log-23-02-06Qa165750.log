@@ -1,0 +1,21 @@
+16:57:52.437  INFO  manager.ApplicationManager - All tests start in Chrome Browser
+16:57:56.659  INFO  manager.ApplicationManager - Current url -->https://ilcarro.web.app/search
+16:57:56.670  INFO  manager.ListenerTNG - onStart ---Nopackage
+16:57:56.691  INFO  tests.TestBase - The name of starts method is -->loginSuccess
+16:57:56.693  INFO  manager.ListenerWD - Before find elements  --> By.xpath: //a[text()=' Logout ']
+16:58:14.718  INFO  manager.ListenerWD - Test ends with error
+16:58:14.718  INFO  manager.ListenerWD - Method method---findElements
+16:58:14.719  INFO  manager.ListenerWD - ****************************
+16:58:14.720  INFO  manager.ListenerWD - InvocationTargetException getTargetException ---> org.openqa.selenium.WebDriverException: disconnected: unable to send message to renderer
+  (failed to check if window was closed: disconnected: unable to connect to renderer)
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.1', revision: 'c6795baf1a3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5b76710467c1e1cbda81dc5a7edb6d51, findElements {using=xpath, value=//a[text()=' Logout ']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:54478}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54478/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5b76710467c1e1cbda81dc5a7edb6d51
+16:58:14.720  INFO  manager.ListenerWD - ****************************
+16:58:14.721  INFO  manager.ListenerWD - Object target ChromeDriver: chrome on WINDOWS (5b76710467c1e1cbda81dc5a7edb6d51)
+16:58:14.721  INFO  manager.ListenerWD - ****************************
+16:58:14.724  INFO  manager.ListenerWD - Screen with error --->src/test/screenshots/screen-418.png

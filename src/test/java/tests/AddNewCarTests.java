@@ -14,7 +14,8 @@ public class AddNewCarTests extends TestBase{
     @BeforeMethod
     public void preCondition(){
         if(!app.getHelperUser().isLogged()){
-            app.getHelperUser().login(new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$"));
+            app.getHelperUser().login(new User().withEmail("michael@gmail.com").withPassword("Michael12345$"));
+
         }
     }
 
